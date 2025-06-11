@@ -1,40 +1,42 @@
-import React from 'react';
-import axios from "axios";
+import axios from 'axios';
 
-
-
-//header 에 token 이 필요 없는 경우 axios 보내기
-const api =axios.create ({
-
-    baseURL: 'http://localhost:3000',
+const api = axios.create({
+    baseURL: 'http://localhost:8080',
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
     },
-})
+});
 
-
-//token필요 경우
+//  토큰 및 권한 헤더 자동 추가
 api.interceptors.request.use(
     (config) => {
-        const token = localStorage.getItem('accessToken');
+        const token = sessionStorage.getItem('accessToken');
+        const userId = sessionStorage.getItem('userId');
+        const userRole = sessionStorage.getItem('userRole');
+
         if (token) {
             config.headers.Authorization = `Bearer ${token}`;
         }
+        if (userId) {
+            config.headers['X-USER-ID'] = userId;
+        }
+        if (userRole) {
+            config.headers['X-USER-ROLE'] = userRole;
+        }
+
         return config;
     },
     (error) => Promise.reject(error)
 );
 
-//login page gogogogogogogogo
+//  응답 에러 처리
 api.interceptors.response.use(
     (response) => response,
     (error) => {
         console.error('API Error:', error);
-
         return Promise.reject(error);
     }
 );
-
 
 export default api;
