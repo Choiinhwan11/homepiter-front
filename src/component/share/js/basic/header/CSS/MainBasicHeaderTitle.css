@@ -1,0 +1,17 @@
+.HeaderTitleDIV{
+    margin-top: 1%;
+    font-family: arial;
+
+}
+.HeaderTitle{
+    height: 100%;
+    margin-top: 1%;
+    font-size: 140%;
+    font-weight: bolder;
+    background-color: wheat;
+    text-align: center;
+    
+}
+p{
+    text-align: center;
+}

@@ -1,0 +1,50 @@
+/* 검색 전체 div */
+.MainHeaderSearchDIV {
+    border: 1px solid black;
+    background-color: whitesmoke;
+    text-align: center;
+    padding: 10px; 
+    width: 100%; 
+    max-width: 800px; 
+    margin: auto; 
+    margin-top: 2%;
+}
+
+
+/* 검색 옵션 상위 클래스 */
+.MainHomeSearch {
+    border: 1px solid black;
+    font-size: 16px; 
+    padding: 5px; 
+    width: 10%; 
+    height: 1%; 
+    border-radius: 4px; 
+}
+
+/* 검색 옵션 input */
+.MainHeaderSearchInput {
+    color: tan;
+    font-size: 14px; 
+    width: 300px; 
+    height: 1%; 
+    padding: 5px; 
+    border: 1px solid #ccc; 
+    border-radius: 4px; 
+    box-sizing: border-box; 
+}
+
+/* 검색 버튼 */
+.MainHeaderHomeSearchButton {
+    border: 1px solid blue;
+    border-radius: 10px; /* 둥근 모서리 */
+    font-size: 16px; /* 폰트 크기 */
+    padding: 10px 20px; /* 버튼 내부 여백 */
+    background-color: wheat; /* 파란색 배경 */
+    color: white; /* 텍스트 색상 */
+    cursor: pointer; /* 마우스 커서 변경 */
+    transition: background-color 0.3s ease; /* 호버 효과 */
+}
+
+.MainHeaderHomeSearchButton:hover {
+    background-color: #c69774; /* 버튼 호버 배경색 */
+}

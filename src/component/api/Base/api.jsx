@@ -1,7 +1,7 @@
 import axios from 'axios';
 
-const api = axios.create({
-    baseURL: 'http://localhost:8080',
+const Api = axios.create({
+    baseURL: 'http://localhost:8080/api',
     withCredentials: true,
     headers: {
         'Content-Type': 'application/json',
@@ -9,7 +9,7 @@ const api = axios.create({
 });
 
 //  토큰 및 권한 헤더 자동 추가
-api.interceptors.request.use(
+Api.interceptors.request.use(
     (config) => {
         const token = sessionStorage.getItem('accessToken');
         const userId = sessionStorage.getItem('userId');
@@ -31,7 +31,7 @@ api.interceptors.request.use(
 );
 
 //  응답 에러 처리
-api.interceptors.response.use(
+Api.interceptors.response.use(
     (response) => response,
     (error) => {
         console.error('API Error:', error);
@@ -39,4 +39,4 @@ api.interceptors.response.use(
     }
 );
 
-export default api;
+export default Api;

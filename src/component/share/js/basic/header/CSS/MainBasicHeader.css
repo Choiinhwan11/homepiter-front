@@ -1,0 +1,58 @@
+/* 해더 전체 div */
+.MainHeaderDIV {
+    background:wheat;
+
+    border-bottom: 10px solid black; /* 잘못된 순서 수정 */
+    height: 10%; /* 헤더 높이 수정 */
+    display: flex;
+    align-items: center; /* 세로 중앙 정렬 */
+    justify-content: space-between; /* 좌우 요소 간격 분배 */
+    padding: 10px 20px; /* 내부 여백 추가 */
+}
+
+/* 로고 */
+.MainHomeLogo {
+    border: 2px solid black;
+    border-radius: 10px;
+    height: 50px; 
+    width: 150px; 
+    margin-left: 20px;
+    margin-top: 0;
+    margin-bottom: 0;
+    object-fit: cover; 
+}
+
+/* 로그인 */
+.MainHeaderLogin {
+    font-size:65%; 
+    border: 1px solid black;
+    border-radius: 20%;
+    width: auto; 
+    padding: 5px 10px;
+    margin-right: 20px; 
+    cursor: pointer; 
+}
+
+/* 아이콘 전체 div */
+.MainHeaderIcon {
+    font-size: 16.65px;
+    display: flex;
+    gap: 7px; /* 아이콘 간격 설정 */
+    align-items: center;
+    margin-left: 420px;
+}
+
+/* 메뉴 아이콘  */
+.MainHeaderMenu{
+    font-size: 30px;
+    border:1px solid black;
+    color: rgba(0, 0, 0, 0.728);
+    border-radius: 10%;
+    margin-right: 10%
+}
+
+/* 알림 아이콘  */
+.MainHeaderNotificationDIV{
+    color: rgb(19, 49, 242);
+
+}
