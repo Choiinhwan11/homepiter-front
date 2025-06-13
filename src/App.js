@@ -1,19 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
-import {Route, Router} from "react-router-dom";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import AdminLayout from "./component/admin/js/AdminLayout";
+
+
 
 function App() {
-  return (
-      <div>
+    return (
+        <Router>
+            <Routes>
+                {/* Admin service  */}
+                <Route path="/admin" element={<AdminLayout />}>
 
-          <h1>this page index page </h1>
+                    {/*<Route path="sidebar" element={<Sidebar />} />*/}
+                </Route>
 
-          <Router>
-              <Route exact path="/" component={App} />
-          </Router>
+                {/*business service */}
 
-      </div>
-  );
+                {/*<Route path="/business" element={<BusinessLayout />}>*/}
+
+
+                {/*</Route>*/}
+                {/*/!*User Service*!/*/}
+
+
+
+
+
+                {/* 루트 페이지 */}
+                {/*<Route path="/" element={<div>메인 인덱스 페이지</div>} />*/}
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
