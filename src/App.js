@@ -23,8 +23,6 @@ function App() {
 
 
 
-
-
                 {/* 루트 페이지 */}
                 {/*<Route path="/" element={<div>메인 인덱스 페이지</div>} />*/}
             </Routes>
