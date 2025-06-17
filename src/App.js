@@ -1,6 +1,7 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import AdminLayout from "./component/admin/js/AdminLayout";
 import AdminSideBarMain from "./component/admin/js/sidebar/AdminSideBarMain";
+import AdminManagementMain from "./component/admin/js/management/AdminManagementMain";
 
 
 
@@ -11,6 +12,7 @@ function App() {
                 {/* Admin service  */}
                 <Route path="/admin" element={<AdminLayout />}>
                     <Route path="adminsidebarmain" element={<AdminSideBarMain />} />
+                    <Route path="adminmanagement" element={<AdminManagementMain/>}/>
                 </Route>
                 {/*business service */}
                 {/*<Route path="/business" element={<BusinessLayout />}>*/}
