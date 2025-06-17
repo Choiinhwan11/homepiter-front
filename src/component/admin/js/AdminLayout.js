@@ -1,15 +1,21 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
+import AdminHeaderMain from './header/AdminHeaderMain'
 import AdminSideBarTitle from './sidebar/AdminSideBarTitle';
-import AdminHeaderMain from "./header/AdminHeaderMain";
 
 const AdminLayout = () => {
     return (
-        <div style={{ display: 'flex', height: '100vh' }}>
+        <div style={{ display: 'flex', flexDirection: 'column', height: '100vh' }}>
 
-            <AdminSideBarTitle />
-            <div style={{ flex: 1, padding: '20px', background: '#f4f4f4' }}>
-                <Outlet />
+            {/*해더*/}
+            <AdminHeaderMain />
+
+            {/*사이드바 */}
+            <div style={{ display: 'flex', flex: 1 }}>
+                <AdminSideBarTitle />
+                <div style={{ flex: 1, padding: '20px', backgroundColor: '#f4f4f4' }}>
+                    <Outlet />
+                </div>
             </div>
         </div>
     );
