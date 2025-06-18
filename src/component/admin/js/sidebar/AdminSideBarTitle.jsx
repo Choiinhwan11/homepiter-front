@@ -1,63 +1,44 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import adminSidebarMenus from './AdminSideBarMenuData';
 
 const AdminSideBarTitle = () => {
+    const [openMenus, setOpenMenus] = useState({});
+
+    const toggleMenu = (key) => {
+        setOpenMenus((prev) => ({
+            ...prev,
+            [key]: !prev[key],
+        }));
+    };
+
     return (
-        <div>
-            <h1>side bar ul li </h1>
+        <div style={{ width: '220px', backgroundColor: '#333', color: '#fff', padding: '20px' }}>
+            <h1 style={{ fontSize: '18px', marginBottom: '10px' }}>관리자 메뉴</h1>
             <nav>
-                <ul>
-                    <li>
-                        공지
-                        <ul>
-                            <li>전체공지</li>
-                            <li>팀공지</li>
-                            <li>개별공지</li>
-                        </ul>
-                    </li>
-                    <li>
-                        일정관리
-                        <ul>
-                            <li>개인일정관리</li>
-                            <li>팀 일정관리 </li>
-                            <li>회사 일정관리 </li>
-                        </ul>
-                    </li>
-                    <li>
-                        거래처
-                        <ul>
-                            <li>거래처 리스트</li>
-                            <li>거래처 등록</li>
-                            <li>거래처 삭제 </li>
-                        </ul>
-                    </li>
-                    <li>
-                        직원 관리
-                        <ul>
-                            <li>직위해지</li>
-                        </ul>
-                    </li>
-                    <li>
-                        메신저
-                        <ul>
-                            <li>개인메신져</li>
-                            <li>팀 메신저</li>
-                        </ul>
-                    </li>
-                    <li>
-                        사용자 관리
-                        <ul>
-                            <li>영정관리</li>
-                        </ul>
-                    </li>
-                    <li>신고관리
-                        <ul>
-                            <li>신고관리</li>
-                        </ul>
-                    </li>
+                <ul style={{ listStyle: 'none', padding: 0 }}>
+                    {adminSidebarMenus.map((menu) => (
+                        <li key={menu.key}>
+              <span
+                  onClick={() => toggleMenu(menu.key)}
+                  style={{ cursor: 'pointer' }}
+              >
+                {openMenus[menu.key] ? '▼' : '▶'} {menu.label}
+              </span>
+                            {openMenus[menu.key] && (
+                                <ul style={{ paddingLeft: '20px' }}>
+                                    {menu.items.map((item) => (
+                                        <li key={item.to}>
+                                            <Link to={item.to} style={{ color: '#fff' }}>
+                                                {item.label}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </li>
+                    ))}
                 </ul>
-
-
-
             </nav>
         </div>
     );

@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../../css/header /AdminMainHeader.module.css' ;
+import styles from '../../css/header/AdminMainHeader.module.css' ;
 
 import AdminHeaderText from "./AdminHeaderText";
 import AdminHeaderMenu from "./AdminHeaderMenu";
