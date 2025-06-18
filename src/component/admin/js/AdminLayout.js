@@ -2,6 +2,7 @@ import React from 'react';
 import { Outlet } from 'react-router-dom';
 import AdminHeaderMain from './header/AdminHeaderMain'
 import AdminSideBarTitle from './sidebar/AdminSideBarTitle';
+import AdminManagementIndex from "./management/AdminManagementIndex";
 
 const AdminLayout = () => {
     return (
@@ -17,6 +18,8 @@ const AdminLayout = () => {
                     <Outlet />
                 </div>
             </div>
+            {/*<AdminManagementIndex/>*/}
+
         </div>
     );
 };
