@@ -32,4 +32,4 @@ export const deleteAuthToken = () => {
     console.log(" authToken 쿠키 삭제 완료");
 };
 //  Axios 인스턴스 내보내기
-export default api;
+export default CookiesApi;
