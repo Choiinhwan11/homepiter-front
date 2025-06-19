@@ -31,7 +31,7 @@ const adminSidebarMenus = [
     {
         key: 'partner',
         label: '거래처',
-        to: '/admin/partner/list',
+         to: '/admin/partner/list',
         items: [
             { label: '거래처 리스트', to: '/admin/partner/list' },
             { label: '거래처 등록', to: '/admin/partner/register' },
