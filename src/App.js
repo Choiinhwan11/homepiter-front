@@ -55,6 +55,7 @@ function App() {
                     <Route path="schedule/company" element={<ScheduleCompany />} />
 
                     {/*  카테고리 */}
+
                     <Route path="category/parentscategory" element={<CategoryParents />} />
                     <Route path="category/childcategory" element={<CategoryChild />} />
 
